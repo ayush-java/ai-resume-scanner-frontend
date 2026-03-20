@@ -239,7 +239,7 @@ export const App: FC = () => {
       formData.append('file', pdfFile);
       formData.append('role', selectedRoleLabel);
 
-      const response = await fetch(`${apiBaseUrl}/api/ats/scan`, {
+      const response = await fetch(`${apiBaseUrl}/ats/scan`, {
         method: 'POST',
         body: formData,
       });
@@ -305,7 +305,7 @@ export const App: FC = () => {
 
     setIsFixingIndex(index);
     try {
-      const response = await fetch(`${apiBaseUrl}/api/ats/fix-bullet`, {
+      const response = await fetch(`${apiBaseUrl}/ats/fix-bullet`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -356,7 +356,7 @@ export const App: FC = () => {
         const formData = new FormData();
         formData.append('file', pdfFile);
 
-        const parseResponse = await fetch(`${apiBaseUrl}/api/resume/parse`, {
+        const parseResponse = await fetch(`${apiBaseUrl}/resume/parse`, {
           method: 'POST',
           body: formData,
         });
